@@ -1,128 +1,235 @@
-# SmartCartia - AI-Powered E-commerce Platform (Next.js Frontend + Express.js Backend)
+# SmartCartia - AI-Powered E-Commerce Platform
 
-A modern e-commerce platform built with a Next.js frontend and an Express.js backend, featuring AI-powered product recommendations, sentiment analysis, and smart shopping features.
+An innovative e-commerce platform powered by AI to enhance shopping experiences through intelligent product recommendations, emotion analysis, and social sentiment insights.
 
-## Architecture
+## 🚀 Architecture
 
-- **Frontend**: Next.js 14 (React 18) - Handles UI rendering and user interaction. Runs on port 3000 by default.
-- **Backend**: Express.js (Node.js) - Provides RESTful APIs, interacts with data sources, and executes Python ML scripts. Runs on port 3001 by default.
+- **Frontend**: React 19 + Vite - Modern React application with fast development server. Runs on port 3000.
+- **Backend**: Express.js + Node.js - RESTful API server with AI integration. Runs on port 3001.
+- **AI Integration**: Google Gemini 2.0 Flash - Server-side AI for intelligent product recommendations.
 
-## Features
+## 🚀 Features
 
-- 🛍️ Complete e-commerce functionality
-- 🤖 AI-powered product recommendations (via backend)
-- 📊 Review emotion analysis (via backend calling Python scripts)
-- 📱 Social media sentiment tracking (via backend calling Python scripts)
-- 🌙 Dark/Light mode support
-- 💱 Multi-currency support (INR/USD)
-- 📱 Fully responsive design
-- 🛒 Advanced shopping cart (interacting with backend APIs)
-- 💬 AI support chat (interacting with backend APIs)
-- 🔍 Smart product search (interacting with backend APIs)
+### Core E-Commerce Features
+- **Product Catalog**: Comprehensive product listings with categories (Electronics, Clothing, Books, Home & Garden, Sports)
+- **Smart Search**: Advanced product search and filtering capabilities
+- **Shopping Cart**: Full-featured cart and checkout system
+- **User Management**: Account creation, authentication, and profile management
+- **Order Processing**: Complete order management workflow
 
-## Getting Started
+### 🤖 AI-Powered Features
+- **Product Finder**: AI-powered product recommendations using Gemini 2.0 Flash based on natural language queries
+- **Review Emotion Analysis**: Advanced sentiment analysis of product reviews using machine learning
+- **Social Media Sentiment**: Real-time sentiment tracking from social platforms
+- **Currency Support**: INR pricing with multi-currency conversion options
+
+### 🎨 Technical Features
+- **Responsive Design**: Mobile-first approach with modern UI/UX
+- **Real-time Updates**: Dynamic content loading and state management
+- **Theme Support**: Light/dark mode toggle
+- **Performance Optimized**: Code splitting, lazy loading, and optimized builds
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React 19**: Modern React with Vite for fast development
+- **React Router**: Client-side routing
+- **Tailwind CSS 4**: Utility-first CSS framework with latest features
+- **Lucide React**: Beautiful and customizable icons
+- **Recharts**: Data visualization and analytics
+
+### Backend
+- **Node.js + Express**: RESTful API server
+- **CORS**: Cross-origin resource sharing configuration
+- **dotenv**: Environment variable management
+
+### AI Integration
+- **Google Gemini 2.0 Flash**: Advanced AI for product recommendations
+- **Python ML Models**: Custom machine learning for emotion analysis
+- **Natural Language Processing**: Advanced text analysis capabilities
+
+### Development Tools
+- **Vite**: Fast build tool and development server
+- **ESLint**: Code linting and quality assurance
+- **PostCSS**: CSS processing and optimization
+- **Concurrently**: Run multiple scripts simultaneously
+
+## 🚀 Getting Started
 
 ### Prerequisites
+- Node.js 18+ and npm
+- Python 3.8+ (for AI features)
+- Git
 
-- Node.js 18.0 or later
-- npm or yarn package manager
-- Python 3.x installed and accessible via `python` or `python3` (or configure `PYTHON_EXECUTABLE` in `.env.local`)
-- Python dependencies for ML scripts (e.g., `nltk`, `pandas` - ensure these are installed in your Python environment)
+### Quick Start
 
-### Installation
+1. **Clone the repository:**
+```bash
+git clone https://github.com/nihal07g/SmartCartia-AI-Powered-E-Commerce-Platform.git
+cd SmartCartia-AI-Powered-E-Commerce-Platform
+```
 
-1.  **Extract the project files**
-    \`\`\`bash
-    # Extract the SmartCartia_nihal.zip file to your desired location
-    cd smartcartia-nihal-express # Or your extracted folder name
-    \`\`\`
+2. **Install dependencies:**
+```bash
+npm install
+```
 
-2.  **Install dependencies** (for both frontend and backend)
-    \`\`\`bash
-    npm install
-    # or
-    yarn install
-    \`\`\`
+3. **Set up environment variables:**
+Create a `.env.local` file in the root directory:
+```env
+# Server Configuration
+FRONTEND_PORT=3000
+BACKEND_PORT=3001
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
 
-3.  **Set up environment variables**
-    - Copy `.env.example` to `.env.local`
-      \`\`\`bash
-      cp .env.example .env.local
-      \`\`\`
-    - Edit `.env.local` if you need to change default ports or Python paths.
+# AI Configuration
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-2.0-flash
 
-4.  **Run the development servers** (Frontend and Backend concurrently)
-    \`\`\`bash
-    npm run dev
-    # or
-    yarn dev
-    \`\`\`
-    This will start:
-    - Next.js frontend on `http://localhost:3000`
-    - Express.js backend on `http://localhost:3001`
+# Python ML Configuration
+PYTHON_EXECUTABLE=python
+PYTHON_ML_PATH=./ml
+```
 
-5.  **Open your browser**
-    Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+4. **Start the development servers:**
+```bash
+npm run dev
+```
 
-### Available Scripts
+This single command starts both:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:3001
 
-- `npm run dev:next` - Start only the Next.js development server
-- `npm run dev:express` - Start only the Express.js development server (with nodemon)
-- `npm run dev` - Start both Next.js and Express development servers concurrently
-- `npm run build` - Build the Next.js application for production
-- `npm run start:next` - Start the Next.js production server
-- `npm run start:express` - Start the Express.js production server
-- `npm run start` - Start both Next.js and Express production servers concurrently
-- `npm run lint` - Run ESLint for code linting
+## 📁 Project Structure
 
-## Project Structure
-
-\`\`\`
-smartcartia-nihal-express/
-├── app/                    # Next.js app directory (Frontend)
-├── components/             # React components (Frontend)
-├── lib/                    # Frontend utility functions
-├── public/                 # Static assets (Frontend)
+```
+├── frontend/               # Vite React application
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── pages/          # Page components
+│   │   ├── lib/            # Utilities and API client
+│   │   └── assets/         # Static assets
+│   ├── public/             # Public assets
+│   └── package.json        # Frontend dependencies
 ├── server/                 # Express.js backend
-│   ├── data/               # Backend data sources (e.g., product data)
-│   ├── routes/             # Express API route handlers
-│   └── index.js            # Express server entry point
-├── ml/                     # Python ML scripts
-├── package.json            # Dependencies and scripts
-├── tailwind.config.js      # Tailwind CSS configuration
-├── .env.example            # Environment variable template
-└── README.md               # This file
-\`\`\`
+│   ├── routes/             # API route handlers
+│   ├── data/               # Data layer and models
+│   ├── lib/                # Server utilities
+│   └── index.js            # Server entry point
+├── ml/                     # Python ML models
+├── components/             # Shared UI components
+├── lib/                    # Shared utilities
+├── public/                 # Shared static assets
+├── app/                    # Legacy Next.js pages (migration reference)
+└── package.json            # Root package.json for scripts
+```
 
-## Technologies Used
+## 🔧 Available Scripts
 
-- **Frontend**: Next.js 14, React 18
-- **Backend**: Express.js, Node.js
-- **Styling**: Tailwind CSS
-- **Icons**: Lucide React
-- **Charts**: Recharts
-- **Language**: JavaScript/JSX (Frontend & Backend)
-- **ML**: Python (scripts in `ml/` directory)
+```bash
+# Development
+npm run dev                 # Start both frontend and backend
+npm run dev:frontend        # Start only frontend (port 3000)
+npm run dev:server          # Start only backend (port 3001)
 
-## Important Notes for Development
+# Production
+npm run build              # Build frontend for production
+npm run start              # Start both servers in production mode
+npm run start:frontend     # Start frontend production server
+npm run start:server       # Start backend production server
+```
 
-- **Data Fetching**: All frontend data fetching now goes through the Express backend via `fetchFromBackend` utility which calls `http://localhost:3001/api/...`.
-- **Python Scripts**: Ensure your Python environment is set up correctly and the path in `.env.local` (`PYTHON_ML_PATH`, `PYTHON_EXECUTABLE`) is correct if your Python setup differs.
-- **Product Data**: Product data is currently hardcoded in `server/data/products.js`. For a production app, this would be a database.
-- **Reviews Data**: Dummy reviews are in `server/routes/review-emotions.js`. This would also be from a database.
+## 🌐 API Endpoints
 
-## Deployment
+### Products
+- `GET /api/products` - Get all products with pagination
+- `GET /api/products/:id` - Get specific product
+- `GET /api/products/categories` - Get all categories
+- `GET /api/products/related/:id` - Get related products
 
-Deploying this setup typically involves:
-1.  Building the Next.js frontend (`npm run build`).
-2.  Deploying the Next.js frontend (e.g., on Vercel, Netlify, or as static files served by Express or another web server).
-3.  Deploying the Express.js backend (e.g., on a Node.js hosting platform like Heroku, Render, or a VPS).
-4.  Configuring environment variables on both deployment platforms, ensuring the frontend knows the URL of the deployed backend.
+### AI Features
+- `POST /api/find-my-product` - AI-powered product finder
+- `POST /api/review-emotions` - Emotion analysis of reviews
+- `POST /api/social-sentiment` - Social media sentiment analysis
 
-## Support
+### Health Check
+- `GET /api/health` - Server health status
 
-For support and questions, refer to the documentation or open an issue if this were a shared project.
+## 🤖 AI Features in Detail
 
-## License
+### Product Finder
+Uses Google Gemini 2.0 Flash to understand natural language queries and recommend products based on:
+- User preferences and context
+- Product specifications and features
+- Price range and availability
+- Category matching and similarity
 
-This project is for educational and demonstration purposes.
+### Emotion Analysis
+Analyzes customer reviews to provide insights into:
+- Overall sentiment distribution
+- Dominant emotions (joy, satisfaction, frustration, etc.)
+- Product-specific emotional responses
+- Review authenticity indicators
+
+### Social Sentiment Tracking
+Monitors and analyzes:
+- Real-time social media mentions
+- Brand perception trends
+- Product popularity metrics
+- Community engagement levels
+
+## 🧪 Testing the Application
+
+### Quick API Tests (PowerShell)
+
+```powershell
+# Test server health
+Invoke-RestMethod -Method Get http://localhost:3001/api/health
+
+# Test AI product finder
+$body = '{"query":"budget wireless earbuds under 5k"}'
+Invoke-RestMethod -Method Post -Uri http://localhost:3001/api/find-my-product -ContentType 'application/json' -Body $body
+
+# Test products endpoint
+Invoke-RestMethod -Method Get http://localhost:3001/api/products
+```
+
+## 🎯 Key Features
+
+- ✅ **Single Command Setup**: `npm run dev` starts everything
+- ✅ **AI-Powered Search**: Natural language product discovery
+- ✅ **Modern React Stack**: Latest React 19 with Vite
+- ✅ **Express Backend**: RESTful API with proper CORS
+- ✅ **Emotion Analysis**: ML-powered sentiment insights
+- ✅ **Responsive Design**: Mobile-first responsive UI
+- ✅ **Production Ready**: Optimized builds and deployment
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Developer
+
+**Nihal Kumar**
+- GitHub: [@nihal07g](https://github.com/nihal07g)
+- Project: [SmartCartia](https://github.com/nihal07g/SmartCartia-AI-Powered-E-Commerce-Platform)
+
+## 🙏 Acknowledgments
+
+- Google Gemini team for the powerful AI capabilities
+- React and Vite communities for excellent developer tools
+- Tailwind CSS for the amazing utility-first framework
+- Open source community for inspiration and tools
+
+---
+
+**⭐ If you found this project helpful, please give it a star!**
