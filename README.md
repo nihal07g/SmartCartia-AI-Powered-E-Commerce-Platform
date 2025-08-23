@@ -219,7 +219,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Developer
 
-**Nihal Kumar**
+**Nihal**
 - GitHub: [@nihal07g](https://github.com/nihal07g)
 - Project: [SmartCartia](https://github.com/nihal07g/SmartCartia-AI-Powered-E-Commerce-Platform)
 
@@ -233,5 +233,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **⭐ If you found this project helpful, please give it a star!**
- 
+
+ 
  
