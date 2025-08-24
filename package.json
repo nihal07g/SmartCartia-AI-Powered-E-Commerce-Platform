@@ -1,5 +1,6 @@
 {
   "name": "smartcartia",
+  "description": "AI-powered e-commerce platform with intelligent product recommendations and emotion analysis",
   "version": "0.2.0",
   "private": true,
   "scripts": {
