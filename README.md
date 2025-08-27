@@ -1,81 +1,154 @@
-# SmartCartia - AI-Powered E-Commerce Platform
+# 🛒 SmartCartia - AI-Powered E-Commerce Platform
 
-An innovative e-commerce platform powered by AI to enhance shopping experiences through intelligent product recommendations, emotion analysis, and social sentiment insights.
+<div align="center">
 
-## 🚀 Architecture
+[![Next.js](https://img.shields.io/badge/Next.js-14.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.0-blue?style=for-the-badge&logo=postgresql)](https://postgresql.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18.0-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-4.18-lightgrey?style=for-the-badge&logo=express)](https://expressjs.com/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
-- **Frontend**: React 19 + Vite - Modern React application with fast development server. Runs on port 3000.
-- **Backend**: Express.js + Node.js - RESTful API server with AI integration. Runs on port 3001.
-- **AI Integration**: Google Gemini 2.0 Flash - Server-side AI for intelligent product recommendations.
+</div>
 
-## 🚀 Features
+<p align="center">
+  <img src="/public/project-banner.png" alt="SmartCartia Banner" width="800" />
+</p>
 
-### Core E-Commerce Features
-- **Product Catalog**: Comprehensive product listings with categories (Electronics, Clothing, Books, Home & Garden, Sports)
-- **Smart Search**: Advanced product search and filtering capabilities
-- **Shopping Cart**: Full-featured cart and checkout system
-- **User Management**: Account creation, authentication, and profile management
-- **Order Processing**: Complete order management workflow
+## 🌟 Overview
 
-### 🤖 AI-Powered Features
-- **Product Finder**: AI-powered product recommendations using Gemini 2.0 Flash based on natural language queries
-- **Review Emotion Analysis**: Advanced sentiment analysis of product reviews using machine learning
-- **Social Media Sentiment**: Real-time sentiment tracking from social platforms
-- **Currency Support**: INR pricing with multi-currency conversion options
+**SmartCartia** is a cutting-edge, AI-powered e-commerce platform that revolutionizes online shopping experiences. Built with modern technologies and advanced AI capabilities, it delivers intelligent product recommendations, seamless user experiences, and enterprise-grade performance.
 
-### 🎨 Technical Features
-- **Responsive Design**: Mobile-first approach with modern UI/UX
-- **Real-time Updates**: Dynamic content loading and state management
-- **Theme Support**: Light/dark mode toggle
-- **Performance Optimized**: Code splitting, lazy loading, and optimized builds
+### ✨ Key Features
 
-## 🛠️ Tech Stack
+🤖 **AI-Powered Intelligence**
+- Advanced Large Language Model integration for intelligent product recommendations
+- Natural language product search and discovery
+- Personalized shopping experiences based on user behavior
+- Smart product categorization and matching
+
+🛍️ **Complete E-Commerce Solution**
+- Full product catalog management with advanced filtering
+- Multi-category product organization
+- Shopping cart and wishlist functionality
+- Order management and tracking system
+- User account management and profiles
+
+💡 **Modern User Experience**
+- Responsive design for all devices
+- Dark/Light theme support
+- Advanced search and filtering capabilities
+- Real-time inventory management
+- Interactive product galleries
+
+📊 **Analytics & Insights**
+- Product interaction tracking
+- User behavior analytics
+- Sales performance metrics
+- Inventory management insights
+
+🔒 **Enterprise Security**
+- Secure user authentication
+- Data encryption and protection
+- GDPR compliant data handling
+- Secure API endpoints
+
+## 🏗️ Architecture
+
+```mermaid
+graph TB
+    A[Frontend - Next.js] --> B[API Gateway - Express.js]
+    B --> C[Database - PostgreSQL]
+    B --> D[LLM Service]
+    B --> E[Analytics Engine]
+    C --> F[Product Catalog]
+    C --> G[User Management]
+    C --> H[Order System]
+    C --> I[Review System]
+```
+
+## 🚀 Technology Stack
 
 ### Frontend
-- **React 19**: Modern React with Vite for fast development
-- **React Router**: Client-side routing
-- **Tailwind CSS 4**: Utility-first CSS framework with latest features
-- **Lucide React**: Beautiful and customizable icons
-- **Recharts**: Data visualization and analytics
+- **Framework:** Next.js 14 with App Router
+- **UI Library:** React 18 with TypeScript
+- **Styling:** TailwindCSS + Radix UI Components
+- **State Management:** React Hooks + Context API
+- **Form Handling:** React Hook Form with Zod validation
 
 ### Backend
-- **Node.js + Express**: RESTful API server
-- **CORS**: Cross-origin resource sharing configuration
-- **dotenv**: Environment variable management
+- **Runtime:** Node.js 18+
+- **Framework:** Express.js with RESTful APIs
+- **Database:** PostgreSQL 16 with connection pooling
+- **ORM:** Custom Models with Repository Pattern
+- **Authentication:** bcrypt for password hashing
 
-### AI Integration
-- **Google Gemini 2.0 Flash**: Advanced AI for product recommendations
-- **Python ML Models**: Custom machine learning for emotion analysis
-- **Natural Language Processing**: Advanced text analysis capabilities
+### AI & Machine Learning
+- **LLM Integration:** Advanced Language Model APIs
+- **Product Recommendations:** Intelligent matching algorithms
+- **Search:** Natural language processing
+- **Analytics:** User behavior tracking
 
-### Development Tools
-- **Vite**: Fast build tool and development server
-- **ESLint**: Code linting and quality assurance
-- **PostCSS**: CSS processing and optimization
-- **Concurrently**: Run multiple scripts simultaneously
+### DevOps & Infrastructure
+- **Development:** Hot reload with nodemon
+- **Package Manager:** npm/pnpm
+- **Environment:** Docker-ready configuration
+- **Database:** PostgreSQL with migration system
 
-## 🚀 Getting Started
+## 📋 Prerequisites
 
-### Prerequisites
-- Node.js 18+ and npm
-- Python 3.8+ (for AI features)
-- Git
+Before you begin, ensure you have the following installed:
 
-### Quick Start
+- **Node.js** 18.0 or higher
+- **npm** or **pnpm** package manager
+- **PostgreSQL** 16.0 or higher
+- **Git** for version control
 
-1. **Clone the repository:**
+## ⚡ Quick Start
+
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/nihal07g/SmartCartia-AI-Powered-E-Commerce-Platform.git
 cd SmartCartia-AI-Powered-E-Commerce-Platform
 ```
 
-2. **Install dependencies:**
+### 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
-3. **Set up environment variables:**
+### 3. Database Setup
+
+#### Create PostgreSQL Database
+
+```sql
+-- Connect to PostgreSQL as superuser
+psql -U postgres
+
+-- Create database and user
+CREATE DATABASE smartcartia_db;
+CREATE USER smartcartia_user WITH PASSWORD 'smartcartia_password';
+GRANT ALL PRIVILEGES ON DATABASE smartcartia_db TO smartcartia_user;
+```
+
+#### Run Migrations
+
+```bash
+# Run database migrations
+psql -U smartcartia_user -d smartcartia_db -f db/migrations/001_create_tables.sql
+
+# Seed initial data
+psql -U smartcartia_user -d smartcartia_db -f seeds/001_initial_data.sql
+psql -U smartcartia_user -d smartcartia_db -f seeds/002_product_images.sql
+```
+
+### 4. Environment Configuration
+
 Create a `.env.local` file in the root directory:
+
 ```env
 # Server Configuration
 FRONTEND_PORT=3000
@@ -83,153 +156,298 @@ BACKEND_PORT=3001
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
 
-# AI Configuration
-GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-2.0-flash
+# Database Configuration
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=smartcartia_db
+DB_USER=smartcartia_user
+DB_PASSWORD=smartcartia_password
 
-# Python ML Configuration
-PYTHON_EXECUTABLE=python
-PYTHON_ML_PATH=./ml
+# AI Configuration
+LLM_API_KEY=your_llm_api_key_here
+LLM_MODEL=advanced-llm-model
+
+# Security
+JWT_SECRET=your-super-secret-jwt-key
+BCRYPT_ROUNDS=12
+
+# Environment
+NODE_ENV=development
 ```
 
-4. **Start the development servers:**
+### 5. Start Development Servers
+
 ```bash
+# Start both frontend and backend servers
 npm run dev
 ```
 
-This single command starts both:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:3001
+The application will be available at:
+- **Frontend:** http://localhost:3000
+- **Backend API:** http://localhost:3001
 
-## 📁 Project Structure
+## 📖 API Documentation
 
-```
-├── frontend/               # Vite React application
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── pages/          # Page components
-│   │   ├── lib/            # Utilities and API client
-│   │   └── assets/         # Static assets
-│   ├── public/             # Public assets
-│   └── package.json        # Frontend dependencies
-├── server/                 # Express.js backend
-│   ├── routes/             # API route handlers
-│   ├── data/               # Data layer and models
-│   ├── lib/                # Server utilities
-│   └── index.js            # Server entry point
-├── ml/                     # Python ML models
-├── components/             # Shared UI components
-├── lib/                    # Shared utilities
-├── public/                 # Shared static assets
-├── app/                    # Legacy Next.js pages (migration reference)
-└── package.json            # Root package.json for scripts
-```
+### Authentication Endpoints
 
-## 🔧 Available Scripts
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | User registration |
+| POST | `/api/auth/login` | User login |
+| POST | `/api/auth/logout` | User logout |
+| GET | `/api/auth/profile` | Get user profile |
+
+### Product Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/products` | Get all products with filtering |
+| GET | `/api/products/:id` | Get product by ID |
+| GET | `/api/products/featured` | Get featured products |
+| GET | `/api/products/bestsellers` | Get bestselling products |
+| GET | `/api/products/search?q=term` | Search products |
+| GET | `/api/products/:id/related` | Get related products |
+
+### Category Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/products/categories` | Get all categories |
+| GET | `/api/categories/:id` | Get category details |
+| GET | `/api/categories/:id/products` | Get products by category |
+
+### AI-Powered Features
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/find-my-product` | AI product recommendations |
+| POST | `/api/review-emotions` | Analyze review sentiment |
+| POST | `/api/social-sentiment` | Social media sentiment analysis |
+
+### Example API Requests
+
+#### Get Products with Filtering
 
 ```bash
-# Development
-npm run dev                 # Start both frontend and backend
-npm run dev:frontend        # Start only frontend (port 3000)
-npm run dev:server          # Start only backend (port 3001)
-
-# Production
-npm run build              # Build frontend for production
-npm run start              # Start both servers in production mode
-npm run start:frontend     # Start frontend production server
-npm run start:server       # Start backend production server
+curl "http://localhost:3001/api/products?category=Electronics&limit=10&featured=true"
 ```
 
-## 🌐 API Endpoints
+#### AI Product Search
 
-### Products
-- `GET /api/products` - Get all products with pagination
-- `GET /api/products/:id` - Get specific product
-- `GET /api/products/categories` - Get all categories
-- `GET /api/products/related/:id` - Get related products
-
-### AI Features
-- `POST /api/find-my-product` - AI-powered product finder
-- `POST /api/review-emotions` - Emotion analysis of reviews
-- `POST /api/social-sentiment` - Social media sentiment analysis
-
-### Health Check
-- `GET /api/health` - Server health status
-
-## 🤖 AI Features in Detail
-
-### Product Finder
-Uses Google Gemini 2.0 Flash to understand natural language queries and recommend products based on:
-- User preferences and context
-- Product specifications and features
-- Price range and availability
-- Category matching and similarity
-
-### Emotion Analysis
-Analyzes customer reviews to provide insights into:
-- Overall sentiment distribution
-- Dominant emotions (joy, satisfaction, frustration, etc.)
-- Product-specific emotional responses
-- Review authenticity indicators
-
-### Social Sentiment Tracking
-Monitors and analyzes:
-- Real-time social media mentions
-- Brand perception trends
-- Product popularity metrics
-- Community engagement levels
-
-## 🧪 Testing the Application
-
-### Quick API Tests (PowerShell)
-
-```powershell
-# Test server health
-Invoke-RestMethod -Method Get http://localhost:3001/api/health
-
-# Test AI product finder
-$body = '{"query":"budget wireless earbuds under 5k"}'
-Invoke-RestMethod -Method Post -Uri http://localhost:3001/api/find-my-product -ContentType 'application/json' -Body $body
-
-# Test products endpoint
-Invoke-RestMethod -Method Get http://localhost:3001/api/products
+```bash
+curl -X POST "http://localhost:3001/api/find-my-product" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "budget wireless earbuds under 5000 rupees"}'
 ```
 
-## 🎯 Key Features
+## 🗄️ Database Schema
 
-- ✅ **Single Command Setup**: `npm run dev` starts everything
-- ✅ **AI-Powered Search**: Natural language product discovery
-- ✅ **Modern React Stack**: Latest React 19 with Vite
-- ✅ **Express Backend**: RESTful API with proper CORS
-- ✅ **Emotion Analysis**: ML-powered sentiment insights
-- ✅ **Responsive Design**: Mobile-first responsive UI
-- ✅ **Production Ready**: Optimized builds and deployment
+### Core Tables
+
+- **products** - Product catalog with specifications
+- **categories** - Hierarchical product categories
+- **users** - Customer accounts and profiles
+- **orders** - Order management and tracking
+- **reviews** - Product reviews and ratings
+- **shopping_cart** - Shopping cart functionality
+- **wishlists** - User wishlists
+
+### Advanced Features
+
+- **product_analytics** - User interaction tracking
+- **product_images** - Image management
+- **product_variants** - Size, color variations
+- **order_addresses** - Shipping and billing addresses
+
+<details>
+<summary>📊 Database ERD</summary>
+
+```mermaid
+erDiagram
+    categories ||--o{ products : contains
+    brands ||--o{ products : manufactures
+    products ||--o{ product_images : has
+    products ||--o{ product_variants : has
+    products ||--o{ reviews : receives
+    products ||--o{ cart_items : includes
+    users ||--o{ orders : places
+    users ||--o{ reviews : writes
+    users ||--o{ wishlists : creates
+    orders ||--o{ order_items : contains
+```
+
+</details>
+
+## 🎨 UI Components
+
+SmartCartia uses a comprehensive design system built with:
+
+- **Radix UI** - Accessible, unstyled components
+- **TailwindCSS** - Utility-first CSS framework
+- **Lucide React** - Beautiful, customizable icons
+- **Custom Components** - Tailored for e-commerce needs
+
+### Key Components
+
+- `ProductGrid` - Responsive product display
+- `CategoryShowcase` - Featured category sections
+- `SearchBar` - Advanced search functionality
+- `ShoppingCart` - Complete cart management
+- `UserProfile` - Account management interface
+
+## 🔧 Configuration
+
+### Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `DB_HOST` | Database host | localhost |
+| `DB_PORT` | Database port | 5432 |
+| `DB_NAME` | Database name | smartcartia_db |
+| `LLM_API_KEY` | LLM service API key | - |
+| `LLM_MODEL` | LLM model name | advanced-llm-model |
+
+### Custom Configuration
+
+The platform supports extensive customization through:
+
+- Theme configuration in `tailwind.config.js`
+- API routes in `server/routes/`
+- Database models in `models/`
+- Frontend components in `components/`
+
+## 🚀 Deployment
+
+### Production Build
+
+```bash
+# Build the application
+npm run build
+
+# Start production server
+npm start
+```
+
+### Docker Deployment
+
+```dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+RUN npm run build
+EXPOSE 3000 3001
+CMD ["npm", "start"]
+```
+
+### Environment Setup
+
+For production deployment:
+
+1. Set up PostgreSQL database
+2. Configure environment variables
+3. Run database migrations
+4. Start the application
+
+## 📊 Performance Features
+
+- **Database Optimization** - Connection pooling, indexed queries
+- **Caching** - Strategic caching for API responses
+- **Lazy Loading** - Optimized image and component loading
+- **Code Splitting** - Efficient bundle management
+- **CDN Ready** - Optimized static asset delivery
+
+## 🔐 Security Features
+
+- **Input Validation** - Comprehensive data validation
+- **SQL Injection Protection** - Parameterized queries
+- **XSS Prevention** - Content sanitization
+- **Rate Limiting** - API abuse prevention
+- **Secure Headers** - Security-first configuration
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+npm test
+
+# Run specific test suites
+npm run test:unit
+npm run test:integration
+npm run test:e2e
+```
+
+## 📈 Analytics & Monitoring
+
+SmartCartia includes comprehensive analytics:
+
+- **Product Performance** - View counts, conversion rates
+- **User Behavior** - Shopping patterns, preferences
+- **Sales Analytics** - Revenue tracking, trends
+- **System Health** - API performance, error rates
+
+## 🛠️ Development
+
+### Project Structure
+
+```
+SmartCartia/
+├── app/                    # Next.js app router pages
+├── components/             # React components
+├── db/                     # Database configuration
+├── models/                 # Database models
+├── repositories/           # Data access layer
+├── server/                 # Express.js backend
+├── public/                 # Static assets
+├── styles/                 # Global styles
+└── lib/                    # Utility functions
+```
+
+### Adding New Features
+
+1. **Database Changes** - Update migrations in `db/migrations/`
+2. **Models** - Create/update models in `models/`
+3. **API Routes** - Add endpoints in `server/routes/`
+4. **Frontend** - Create components in `components/`
 
 ## 🤝 Contributing
 
+We welcome contributions! Please read our contributing guidelines:
+
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Developer
-
-**Nihal Kumar**
-- GitHub: [@nihal07g](https://github.com/nihal07g)
-- Project: [SmartCartia](https://github.com/nihal07g/SmartCartia-AI-Powered-E-Commerce-Platform)
-
 ## 🙏 Acknowledgments
 
-- Google Gemini team for the powerful AI capabilities
-- React and Vite communities for excellent developer tools
-- Tailwind CSS for the amazing utility-first framework
-- Open source community for inspiration and tools
+- **Open Source Community** - For amazing libraries and tools
+- **Design Inspiration** - Modern e-commerce platforms
+- **AI Technology Partners** - For advanced LLM capabilities
+- **Contributors** - Everyone who helped build this platform
+
+## 📞 Support
+
+For support and questions:
+
+- **Documentation** - Check our comprehensive docs
+- **Issues** - Create GitHub issues for bugs
+- **Discussions** - Join community discussions
+- **Email** - Contact our support team
 
 ---
 
-**⭐ If you found this project helpful, please give it a star!**
+<div align="center">
+
+**Built with ❤️ for the future of e-commerce**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/nihal07g/SmartCartia-AI-Powered-E-Commerce-Platform)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nihal07g/SmartCartia-AI-Powered-E-Commerce-Platform)
+
+</div>

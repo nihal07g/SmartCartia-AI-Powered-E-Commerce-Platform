@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { allProducts } = require('../data/products')
-const { geminiChat } = require('../lib/gemini')
+const { llmChat } = require('../lib/gemini')
 
 function buildCatalogContext() {
   return allProducts
@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
   const catalog = buildCatalogContext()
 
   // Fallback without API key: naive keyword match
-  if (!process.env.GEMINI_API_KEY) {
+  if (!process.env.LLM_API_KEY) {
     const q = String(query).toLowerCase()
     const matched = catalog.filter(p =>
       p.name.toLowerCase().includes(q) ||
@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
     const sys = 'You are a shopping assistant. Return strict JSON matching the schema.'
     const schema = '{ "recommendations": [ { "id": "string", "reason": "string" } ] }'
     const prompt = `User query: ${query}\nCatalog (array of items): ${JSON.stringify(catalog)}\nTask: Recommend up to 5 item ids that best match the user query considering budget, category, and tags.\nRespond ONLY with JSON matching this schema: ${schema}`
-    const text = await geminiChat(prompt, sys)
+    const text = await llmChat(prompt, sys)
     let parsed
     try { parsed = JSON.parse(text) } catch (_) {
       const start = text.indexOf('{'); const end = text.lastIndexOf('}')
@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
     if (!parsed || !Array.isArray(parsed.recommendations)) throw new Error('Invalid model response')
     const ids = new Set(catalog.map(c => c.id))
     const cleaned = parsed.recommendations.filter(r => ids.has(String(r.id)))
-    return res.json({ recommendations: cleaned, model: process.env.GEMINI_MODEL || 'gemini-2.0-flash' })
+    return res.json({ recommendations: cleaned, model: process.env.LLM_MODEL || 'advanced-llm-model' })
   } catch (err) {
     console.error('find-my-product error:', err)
     return res.status(500).json({ error: 'AI processing failed' })
