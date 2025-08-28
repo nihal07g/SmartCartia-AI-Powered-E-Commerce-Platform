@@ -38,6 +38,17 @@ class Product {
     this.images = data.images || [];
     this.variants = data.variants || [];
     this.specifications = data.specifications || [];
+    const mongoose = require('mongoose');
+
+    const ProductSchema = new mongoose.Schema({
+      name: { type: String, required: true },
+      description: String,
+      price: { type: Number, required: true },
+      category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
+      createdAt: { type: Date, default: Date.now }
+    });
+
+    module.exports = mongoose.model('Product', ProductSchema);
   }
 
   // Static methods for database operations

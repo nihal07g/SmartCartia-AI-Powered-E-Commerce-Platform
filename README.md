@@ -4,7 +4,7 @@
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.0-blue?style=for-the-badge&logo=postgresql)](https://postgresql.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-6.0-green?style=for-the-badge&logo=mongodb)](https://mongodb.com/)
 [![Node.js](https://img.shields.io/badge/Node.js-18.0-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Express-4.18-lightgrey?style=for-the-badge&logo=express)](https://expressjs.com/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
@@ -59,7 +59,7 @@
 ```mermaid
 graph TB
     A[Frontend - Next.js] --> B[API Gateway - Express.js]
-    B --> C[Database - PostgreSQL]
+  B --> C[Database - MongoDB]
     B --> D[LLM Service]
     B --> E[Analytics Engine]
     C --> F[Product Catalog]
@@ -80,8 +80,8 @@ graph TB
 ### Backend
 - **Runtime:** Node.js 18+
 - **Framework:** Express.js with RESTful APIs
-- **Database:** PostgreSQL 16 with connection pooling
-- **ORM:** Custom Models with Repository Pattern
+- **Database:** MongoDB 6.0+ with Mongoose connection pooling
+- **ORM:** Mongoose Models & Service Layer
 - **Authentication:** bcrypt for password hashing
 
 ### AI & Machine Learning
@@ -94,7 +94,7 @@ graph TB
 - **Development:** Hot reload with nodemon
 - **Package Manager:** npm/pnpm
 - **Environment:** Docker-ready configuration
-- **Database:** PostgreSQL with migration system
+- **Database:** MongoDB with migration/seeding (migrate-mongo)
 
 ## 📋 Prerequisites
 
@@ -102,7 +102,7 @@ Before you begin, ensure you have the following installed:
 
 - **Node.js** 18.0 or higher
 - **npm** or **pnpm** package manager
-- **PostgreSQL** 16.0 or higher
+- **MongoDB** 6.0 or higher
 - **Git** for version control
 
 ## ⚡ Quick Start
@@ -122,27 +122,29 @@ npm install
 
 ### 3. Database Setup
 
-#### Create PostgreSQL Database
+#### Start MongoDB Locally
 
-```sql
--- Connect to PostgreSQL as superuser
-psql -U postgres
-
--- Create database and user
-CREATE DATABASE smartcartia_db;
-CREATE USER smartcartia_user WITH PASSWORD 'smartcartia_password';
-GRANT ALL PRIVILEGES ON DATABASE smartcartia_db TO smartcartia_user;
+```bash
+# Start MongoDB server (default port 27017)
+mongod --dbpath /path/to/your/data
 ```
 
-#### Run Migrations
+#### Configure MongoDB Connection
+
+Set your MongoDB URI in `.env.local`:
+
+```env
+MONGODB_URI=mongodb://localhost:27017/smartcartia
+```
+
+#### Run Migrations & Seed Data
 
 ```bash
 # Run database migrations
-psql -U smartcartia_user -d smartcartia_db -f db/migrations/001_create_tables.sql
+npx migrate-mongo up
 
 # Seed initial data
-psql -U smartcartia_user -d smartcartia_db -f seeds/001_initial_data.sql
-psql -U smartcartia_user -d smartcartia_db -f seeds/002_product_images.sql
+node db/seedData.js
 ```
 
 ### 4. Environment Configuration
@@ -156,12 +158,9 @@ BACKEND_PORT=3001
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
 
+
 # Database Configuration
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=smartcartia_db
-DB_USER=smartcartia_user
-DB_PASSWORD=smartcartia_password
+MONGODB_URI=mongodb://localhost:27017/smartcartia
 
 # AI Configuration
 LLM_API_KEY=your_llm_api_key_here
@@ -345,9 +344,9 @@ CMD ["npm", "start"]
 
 For production deployment:
 
-1. Set up PostgreSQL database
+1. Set up MongoDB database
 2. Configure environment variables
-3. Run database migrations
+3. Run database migrations & seed data
 4. Start the application
 
 ## 📊 Performance Features

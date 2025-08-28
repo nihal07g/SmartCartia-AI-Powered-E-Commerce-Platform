@@ -21,6 +21,16 @@ class User {
     this.orderCount = data.order_count || 0;
     this.totalSpent = data.total_spent || 0;
   }
+  const mongoose = require('mongoose');
+
+  const UserSchema = new mongoose.Schema({
+    email: { type: String, unique: true, required: true },
+    name: { type: String, required: true },
+    password: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now }
+  });
+
+  module.exports = mongoose.model('User', UserSchema);
 
   static async findAll(options = {}) {
     const {
